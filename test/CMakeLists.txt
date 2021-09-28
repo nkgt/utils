@@ -5,6 +5,8 @@ target_link_libraries(test_main
     PRIVATE nkgt-utils
     PRIVATE Catch2::Catch2)
 
+set_target_properties(test_main PROPERTIES CXX_STANDARD 17)
+
 include(CTest)
 include(Catch)
 catch_discover_tests(test_main)
