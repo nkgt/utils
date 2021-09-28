@@ -10,4 +10,10 @@ target_include_directories(nkgt-utils
 target_compile_options(nkgt-utils
     PRIVATE $<$<CONFIG:Debug>:-Wall -Wextra -Wpedantic -Wconversion>
     PRIVATE $<$<CONFIG:Debug>:-fsanitize=address -fsanitize=leak -fsanitize=undefined>
+    PRIVATE $<$<CONFIG:Release>:-O3>
     PRIVATE -std=c++17)
+
+if(NKGT_BUILD_TESTS STREQUAL "On")
+    message(STATUS "Configuring tests...")
+    add_subdirectory(test)
+endif()
