@@ -10,7 +10,7 @@ To build the library you need to execute the following commands from the root di
 > cmake --build .
 ```
 
-If you wish to also build the test suite you'll need to install [vcpkg](https://vcpkg.io/) and integrate directly in CMake by running
+If you wish to also build the test suite you'll need to install [vcpkg](https://vcpkg.io/) and integrate it directly in CMake by running
 
 ```bash
 > mkdir build && cd build
