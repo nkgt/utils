@@ -27,10 +27,6 @@ TEST_CASE("is_vec3_like traits recognizes the correct types", "[traits-vector]")
         REQUIRE(nkgt::is_vec3_like_v<vec3_const_int>);
     }
 
-    SECTION("Non-numerical data members are rejected") {
-        REQUIRE(!nkgt::is_vec3_like_v<vec3_non_numeric>);
-    }
-
     SECTION("Wrong naming is rejected") {
         REQUIRE(!nkgt::is_vec3_like_v<vec3_int_wrong_name>);
     }
