@@ -28,12 +28,7 @@ struct is_vec3_like<
 > : std::bool_constant<
         // Check that the types are uniform across members
         std::is_same_v<decltype(std::declval<T>().x), decltype(std::declval<T>().y)> &&
-        std::is_same_v<decltype(std::declval<T>().y), decltype(std::declval<T>().z)> &&
-        // Check that the type are numerical. This still accepts char and the
-        // like which I think is a mistake!
-        std::is_arithmetic_v<decltype(std::declval<T>().x)> &&
-        std::is_arithmetic_v<decltype(std::declval<T>().y)> &&
-        std::is_arithmetic_v<decltype(std::declval<T>().z)>
+        std::is_same_v<decltype(std::declval<T>().y), decltype(std::declval<T>().z)>
     >
 {};
 
