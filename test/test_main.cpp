@@ -1,4 +1,5 @@
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
 
-// Add here #include directives to single test .hpp files
+#include "type_support.test.hpp"
+#include "traits/vectors.test.hpp"

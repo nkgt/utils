@@ -1,5 +1,5 @@
-#ifndef _NKGT_NOISY_HPP_
-#define _NKGT_NOISY_HPP_
+#ifndef _NKGT_NOISY_
+#define _NKGT_NOISY_
 
 namespace nkgt {
 
