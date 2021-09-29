@@ -26,10 +26,6 @@ struct is_vec3_like<
         decltype(std::declval<T>().z)
     >
 > : std::bool_constant<
-        // Check if they are data member and not methods
-        std::is_member_object_pointer_v<decltype(std::declval<T>().x)> &&
-        std::is_member_object_pointer_v<decltype(std::declval<T>().y)> &&
-        std::is_member_object_pointer_v<decltype(std::declval<T>().z)> &&
         // Check that the types are uniform across members
         std::is_same_v<decltype(std::declval<T>().x), decltype(std::declval<T>().y)> &&
         std::is_same_v<decltype(std::declval<T>().y), decltype(std::declval<T>().z)> &&
