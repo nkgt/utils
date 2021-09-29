@@ -9,22 +9,24 @@ template<typename T>
 constexpr auto type_name() {
 #ifdef __clang__
     std::string_view name = __PRETTY_FUNCTION__;
-    return std::string_view{name.data() + 22, name.size() - 22 - 1};
-    // prefix = "auto type_name() [T = ";
+    return std::string_view{name.data() + 28, name.size() - 28 - 1};
+    // prefix = "auto nkgt::type_name() [T = ";
     // suffix = "]";
 #elif defined(__GNUC__)
     std::string_view name = __PRETTY_FUNCTION__;
-    return std::string_view{name.data() + 37, name.size() - 37 - 1};
-    // prefix = "constexpr auto type_name() [with T = ";
+    return std::string_view{name.data() + 43, name.size() - 43 - 1};
+    // prefix = "constexpr auto nkgt::type_name() [with T = ";
     // suffix = "]";
 #elif defined(_MSC_VER)
     std::string_view name = __FUNCSIG__;
-    return std::string_view{name.data() + 23, name.size() - 23 - 7};
-    // prefix = "auto __cdecl type_name<";
+    return std::string_view{name.data() + 29, name.size() - 29 - 7};
+    // prefix = "auto __cdecl nkgt::type_name<";
     // suffix = ">(void)";
 #endif
 }
 
+template<typename T>
+inline constexpr std::string_view type_name_v = type_name<T>();
 }
 
 #endif // _NKGT_TYPESUPPORT_
